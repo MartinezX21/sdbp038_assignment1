@@ -26,3 +26,21 @@
 .text-xs {
     font-size: 12px;
 }
+
+.text-danger {
+    color: #e74c3c;
+}
+
+.text-important {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.my-8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
