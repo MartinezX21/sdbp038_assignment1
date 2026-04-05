@@ -68,3 +68,25 @@ Project.prototype.createProjectCard = function() {
 
     return projectCard;
 };
+
+function loadProjectsFromAPI(onProjectsLoaded) {
+    fetch('./assets/data/projects.json')
+        .then(response => response.json())
+        .then(projectsData => {
+            const projects = projectsData.map(project => {
+                const newProject = new Project(
+                    project.category,
+                    project.name,
+                    project.description,
+                    project.link
+                );
+                newProject.setImage(project.image.path, project.image.description);
+                return newProject;
+            });
+            onProjectsLoaded(projects);
+        });
+}
+
+loadProjectsFromAPI(function(projects) {
+    console.log('Projects loaded:', projects);
+});
