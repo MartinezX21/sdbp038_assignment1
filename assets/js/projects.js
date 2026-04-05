@@ -1,3 +1,5 @@
+var projectsList = [];
+
 function Project(category, name, description, link) {
     this.category = category;
     this.name = name;
@@ -70,7 +72,7 @@ Project.prototype.createProjectCard = function() {
 };
 
 function loadProjectsFromAPI(onProjectsLoaded) {
-    fetch('./assets/data/projects.json')
+    fetch('https://martinezx21.github.io/sdbp038_assignment1/assets/data/projects.json')
         .then(response => response.json())
         .then(projectsData => {
             const projects = projectsData.map(project => {
@@ -87,6 +89,18 @@ function loadProjectsFromAPI(onProjectsLoaded) {
         });
 }
 
+function displayProjects() {
+    const projectsGrid = document.querySelector('.projects-grid');
+    projectsList.forEach(project => {
+        const projectCard = project.createProjectCard();
+        projectsGrid.appendChild(projectCard);
+    });
+}
+
 loadProjectsFromAPI(function(projects) {
     console.log('Projects loaded:', projects);
+    projectsList = [
+        ...projects
+    ];
+    displayProjects();
 });
