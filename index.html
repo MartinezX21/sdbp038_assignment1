@@ -29,57 +29,15 @@
             <h1 class="w-full text-center">My Projects</h1>
             <div class="w-full my-16">
                 <p class="text-gray text-center mw-600 m-auto">Here are some of the projects I've worked on, showcasing my skills in creating fully functional web applications.</p>
+                <div class="w-full d-flex justify-end mt-16">
+                    <div class="search-box form-group">
+                        <input type="text" placeholder="Search projects..." onkeypress="handleFilterProjects(event)" />
+                        <span class="search-icon"><i class="fa-solid fa-search"></i></span>
+                    </div>
+                </div>
             </div>
             <article class="projects-grid">
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="assets/images/xpharma.png" alt="Xpharma project screenshot" class="card-image">
-                    </div>
-                    <div class="card-content">
-                        <p class="text-gray text-xs">WEB DEVELOPMENT</p>
-                        <h3 class="card-title">XPharma</h3>
-                        <p class="card-description">Automate the management of your hospital pharmacy. More than just pharmacy management software, XPharma takes into account all other hospital services.</p>
-                        <div class="w-full">
-                            <a href="http://xpharma.kamvusoft.com" class="card-button" target="_blank" rel="noopener noreferrer">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="assets/images/kamvusoft.png" alt="Kamvusoft project screenshot" class="card-image">
-                    </div>
-                    <div class="card-content">
-                        <p class="text-gray text-xs">WEB DEVELOPMENT</p>
-                        <h2 class="card-title">Kamvusoft</h2>
-                        <div class="card-description">
-                            <p>This project showcases Kamvusoft's expertise in developing cutting-edge software solutions for various industries.</p>
-                        </div>
-                        <div class="w-full">
-                            <a href="http://www.kamvusoft.com" class="card-button" target="_blank" rel="noopener noreferrer">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="assets/images/nufi.PNG" alt="Xpharma project screenshot" class="card-image">
-                    </div>
-                    <div class="card-content">
-                        <p class="text-gray text-xs">UI-UX DESIGN</p>
-                        <h2 class="card-title">Nufi</h2>
-                        <div class="card-description">
-                            <p>Figma design for the Nufi platform, which is a platform that help to centralize notification management for apps.</p>
-                        </div>
-                        <div class="w-full">
-                            <a href="https://www.figma.com/design/xKhYzIv0s5Sqtb8erkHfXv/Lintello?node-id=0-1&t=6BoyLzjY7DctkWDY-1" class="card-button" target="_blank" rel="noopener noreferrer">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
             </article>
         </section>
         <section class="container container-inverted contact-section" id="contact">

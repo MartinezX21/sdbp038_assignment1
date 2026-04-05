@@ -1,3 +1,5 @@
+var projectsList = [];
+
 function Project(category, name, description, link) {
     this.category = category;
     this.name = name;
@@ -65,12 +67,15 @@ Project.prototype.createProjectCard = function() {
     linkWrapper.classList.add('w-full');
     linkWrapper.appendChild(link);
     content.appendChild(linkWrapper);
-
-    return projectCard;
+    //
+    const projectCardWrapper = document.createElement('div');
+    projectCardWrapper.classList.add('card-wrapper');
+    projectCardWrapper.appendChild(projectCard);
+    return projectCardWrapper;
 };
 
 function loadProjectsFromAPI(onProjectsLoaded) {
-    fetch('./assets/data/projects.json')
+    fetch('https://martinezx21.github.io/sdbp038_assignment1/assets/data/projects.json')
         .then(response => response.json())
         .then(projectsData => {
             const projects = projectsData.map(project => {
@@ -87,6 +92,38 @@ function loadProjectsFromAPI(onProjectsLoaded) {
         });
 }
 
+function displayProjects(projects) {
+    const projectsGrid = document.querySelector('.projects-grid');
+    projectsGrid.innerHTML = ''; // Clear existing projects
+    if(projects.length === 0) {
+        const noResults = document.createElement('p');
+        noResults.classList.add('text-gray', 'text-center', 'w-full');
+        noResults.textContent = 'No projects found.';
+        projectsGrid.appendChild(noResults);
+    } else {
+        projects.forEach(project => {
+            const projectCard = project.createProjectCard();
+            projectsGrid.appendChild(projectCard);
+        });
+    }
+}
+
 loadProjectsFromAPI(function(projects) {
     console.log('Projects loaded:', projects);
+    projectsList = [
+        ...projects
+    ];
+    displayProjects(projectsList);
 });
+
+function handleFilterProjects(event) {
+    if (event.key === 'Enter') {
+        const query = event.target.value.toLowerCase();
+        const filteredProjects = projectsList.filter(project => 
+            project.name.toLowerCase().includes(query) ||
+            project.description.toLowerCase().includes(query) ||
+            project.category.toLowerCase().includes(query)
+        );
+        displayProjects(filteredProjects);
+    }
+}

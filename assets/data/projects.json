@@ -1,16 +1,6 @@
 [
     {
         "category": "WEB DEVELOPMENT",
-        "name": "XPharma",
-        "description": "Automate the management of your hospital pharmacy. More than just pharmacy management software, XPharma takes into account all other hospital services.",
-        "image": {
-            "path": "assets/images/xpharma.png",
-            "description": "Xpharma project screenshot"
-        },
-        "link": "https://xpharma.kamvusoft.com"
-    },
-    {
-        "category": "WEB DEVELOPMENT",
         "name": "Kamvusoft",
         "description": "This project showcases Kamvusoft's expertise in developing cutting-edge software solutions for various industries.",
         "image": {
@@ -18,6 +8,16 @@
             "description": "Kamvusoft project screenshot"
         },
         "link": "https://www.kamvusoft.com"
+    },
+    {
+        "category": "WEB DEVELOPMENT",
+        "name": "XPharma",
+        "description": "XPharma is a comprehensive pharmaceutical management system designed to streamline operations, enhance efficiency, and improve patient care in healthcare settings.",
+        "image": {
+            "path": "assets/images/xpharma.png",
+            "description": "Xpharma project screenshot"
+        },
+        "link": "https://xpharma.kamvusoft.com"
     },
     {
         "category": "UI-UX DESIGN",

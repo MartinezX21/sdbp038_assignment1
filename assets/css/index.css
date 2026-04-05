@@ -88,7 +88,11 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
-    margin-top: 32px;
+    margin-top: 16px;
+}
+
+.card-wrapper {
+    margin: auto;
 }
 
 .card {
@@ -97,6 +101,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-width: 400px;
 
     & .card-image-container {
         background-color: #f0f0f0;
@@ -271,4 +276,17 @@ header {
         width: 100%;
         max-width: none;
     }
+}
+
+.search-box {
+    position: relative;
+    max-width: 350px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
 }
