@@ -29,6 +29,12 @@
             <h1 class="w-full text-center">My Projects</h1>
             <div class="w-full my-16">
                 <p class="text-gray text-center mw-600 m-auto">Here are some of the projects I've worked on, showcasing my skills in creating fully functional web applications.</p>
+                <div class="w-full d-flex justify-end mt-16">
+                    <div class="search-box form-group">
+                        <input type="text" placeholder="Search projects..." onkeypress="handleFilterProjects(event)" />
+                        <span class="search-icon"><i class="fa-solid fa-search"></i></span>
+                    </div>
+                </div>
             </div>
             <article class="projects-grid">
                 <!-- Project cards will be dynamically inserted here by JavaScript -->
